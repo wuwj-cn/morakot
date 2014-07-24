@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>first jquery demo</title>
+<style type="text/css">
+	.iframe{
+		border: solid 1px #888;
+		font-size: 13px;
+	}
+	.title{
+		padding: 6px;
+		background-color: #EEE;
+		text-align: center;
+	}
+	.content{
+		padding: 8px 0px;
+		font-size: 12px;
+		text-align: center;
+		display: none;
+	}
+	.curcol{
+		background-color: #CCC;
+	}
+</style>
+<script type="text/javascript" src="../../widgets/jquery/jquery-1.8.2.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(".content").html("hello world");
+		$(".title").click(function(){
+			$(this).addClass("curcol").next(".content").css("display", "block");
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="iframe">
+		<div class="title">标题</div>
+		<div class="content"></div>
+	</div>
+</body>
+</html>
