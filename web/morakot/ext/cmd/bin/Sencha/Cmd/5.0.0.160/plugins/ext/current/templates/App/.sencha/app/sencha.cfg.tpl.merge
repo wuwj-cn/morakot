@@ -1,0 +1,32 @@
+# This value has been replaced by "build.dir" set in defaults.properties but is
+# preserved for compatibility.
+app.build.dir=$\u007Bworkspace.build.dir}/$\u007Bapp.name}
+
+# Path to sass rule definition files corresponding to JavaScript classes.
+app.sass.srcpath=$\u007Bapp.dir}/sass/src
+
+# Path to sass variable definition files corresponding to JavaScript classes.
+app.sass.varpath=$\u007Bapp.dir}/sass/var
+
+# Path to sass function and mixin files.
+app.sass.etcpath=$\u007Bapp.dir}/sass/etc/all.scss
+
+# Path to extra ruby files to include into the generated sass config.rb,
+# <approot>/sass/config.rb will be included automatically if present and does
+# not need to be specified.
+# app.sass.rubypath=
+
+# This property can be modified to change the input and output page file 
+# used in the compile command. (eg: index.aspx, index.jsp ... )
+app.page.name=index.html
+
+# the input page file
+app.page.file=$\u007Bapp.dir}/$\u007Bapp.page.name}
+
+# this property specifies a comma separated list of paths containing
+# resources to copy to the build directory
+app.resource.paths=$\u007Bapp.dir}/resources
+
+#==============================================================================
+# Custom Properties - Place customizations below this line to avoid merge
+# conflicts with newer versions
