@@ -57,5 +57,9 @@ Ext.define('app.view.main.region.Top', {
 	}, {
 		text: '设置',
 		glyph: 0xf013
+	}, {
+		glyph : 0xf102,
+	    handler : 'hiddenTopBottom',
+	    tooltip : '隐藏顶部和底部区域'
 	}]
 });
