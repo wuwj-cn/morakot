@@ -4,6 +4,13 @@
 Ext.define('app.view.main.region.Top', {
 	extend: 'Ext.toolbar.Toolbar',
 	alias: 'widget.maintop',
+	
+	uses: ['app.ux.ButtonTransparent'],
+	
+	defaults : {
+	    xtype : 'buttontransparent'
+	},
+	
 	items: [{
 		xtype: 'image',
 		bind: {
