@@ -7,7 +7,6 @@
  */
 Ext.define('app.view.main.Main', {
     extend: 'Ext.container.Container',
-
     xtype: 'app-main',
     
     uses: [
@@ -48,13 +47,13 @@ Ext.define('app.view.main.Main', {
     }, {  
         xtype : 'mainmenutree',  
         region : 'west', // 左边面板  
-        width : 250,  
-        split : true  
+        width : 250,
+        split : true
     }, {  
         xtype : 'mainmenuaccordion',  
         region : 'west', // 左边面板  
-        width : 250,  
-        split : true  
+        width : 250,
+        split : true
     }, {
     	xtype: 'mainbottom',
         region: 'south' // 把他放在最底下
