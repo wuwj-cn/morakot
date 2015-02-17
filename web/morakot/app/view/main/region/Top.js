@@ -7,13 +7,14 @@ Ext.define('app.view.main.region.Top', {
 	
 	uses: [
 	       'app.ux.ButtonTransparent',
-	       'app.view.main.region.ButtonMainMenu'
+	       'app.view.main.menu.ButtonMainMenu',
+	       'app.view.main.menu.SettingMenu'
 	],
 	
 	defaults : {
 	    xtype : 'buttontransparent'
 	},
-	
+	height : 40,
 	items: [{
 		xtype: 'image',
 		bind: {
@@ -32,7 +33,11 @@ Ext.define('app.view.main.region.Top', {
 			text: '{system.version}'
 		}
 	}, '->', {
-		xtype: 'buttonmainmenu'
+		xtype : 'buttonmainmenu',
+		hidden : true,
+		bind : {
+			hidden : '{!isButtonMenu}'
+		}
 	}, ' ', ' ', {
 		text: '主页',
 		glyph: 0xf015
@@ -43,14 +48,13 @@ Ext.define('app.view.main.region.Top', {
 		text: '关于',
 		glyph: 0xf06a
 	}, {
-		text: '注销',
-		glyph: 0xf011
+		xtype : 'settingmenu'
 	}, '->', '->', {
 		text: '搜索',
 		glyph: 0xf002
 	}, {
-		text: '设置',
-		glyph: 0xf013
+		text: '注销',
+		glyph: 0xf011
 	}, {
 		glyph : 0xf102,
 	    handler : 'hiddenTopBottom',

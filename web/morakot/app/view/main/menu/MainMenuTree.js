@@ -1,14 +1,14 @@
 /**
  * 树状菜单，显示在主界面的左边
  */
-Ext.define('app.view.main.region.MainMenuTree', {
+Ext.define('app.view.main.menu.MainMenuTree', {
     extend: 'Ext.tree.Panel',
     alias: 'widget.mainmenutree',
     title: '系统菜单',
-    glyph: 0xf0c9,
+    //glyph: 0xf0c9,
     rootVisible: false,
-    lines: true,
-    viewModel: 'main',
+    lines: false,
+    //viewModel: 'main',
 
     initComponent: function () {
         this.store = Ext.create('Ext.data.TreeStore', {
@@ -18,7 +18,7 @@ Ext.define('app.view.main.region.MainMenuTree', {
                 expanded: true
             }
         });
-        var menus = this.getViewModel().get('systemMenu');
+        var menus = this.up('app-main').getViewModel().get('systemMenu');
         var root = this.store.getRootNode();
         for (var i in menus) {
             var menugroup = menus[i];

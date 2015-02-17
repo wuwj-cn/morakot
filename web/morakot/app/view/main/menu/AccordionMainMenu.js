@@ -1,22 +1,22 @@
 /**
  * 折叠式(accordion)菜单，样式可以自己用css进行美化
  */
-Ext.define('app.view.main.region.AccordionMainMenu', {
+Ext.define('app.view.main.menu.AccordionMainMenu', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.mainmenuaccordion',
     title: '系统菜单',
-    glyph: 0xf0c9,
+    //glyph: 0xf0c9,
 
     layout: {
         type: 'accordion',
         animate: true
     },
 
-    viewModel: 'main',
+    //viewModel: 'main',
 
     initComponent: function () {
         this.items = [];
-        var menus = this.getViewModel().get('systemMenu');
+        var menus = this.up('app-main').getViewModel().get('systemMenu');
         for (var i in menus) {
             var menugroup = menus[i];
             var accpanel = {
@@ -49,7 +49,6 @@ Ext.define('app.view.main.region.AccordionMainMenu', {
     },
 
     addSpace: function (text, len) {
-        console.log(text.length);
         var result = text;
         for (var i = text.length; i < len; i++) {
             result += '　';

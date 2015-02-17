@@ -7,6 +7,13 @@ Ext.define('app.view.main.MainModel', {
     alias: 'viewmodel.main',
 
     data: {
+    	monetary : { // 金额单位
+			value : 'tenthousand' // 默认万元，以后可以从后台取得个人偏好设置，或者存放在cookies中
+		},
+		menuType : {
+			value : 'toolbar'
+		}, // 菜单的位置，'button' , 'toolbar' , 'tree'
+		
         name: 'app',
         
         //系统信息
@@ -103,6 +110,18 @@ Ext.define('app.view.main.MainModel', {
     },
 
     //TODO - add data, formulas and/or methods to support your view
+    formulas: {
+    	isButtonMenu: function(get){
+    		return get('menuType.value') === 'button';
+    	},
+    	isTreeMenu: function(get){
+    		return get('menuType.value') === 'tree';
+    	},
+    	isToolbarMenu : function(get) {
+			return get('menuType.value') === 'toolbar';
+		}
+    },
+    
 	//根据data.systemMenu生成菜单条和菜单按钮下面使用的菜单数据
 	getMenus : function() {
 	    var items = [];

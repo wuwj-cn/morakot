@@ -24,7 +24,7 @@ Ext.define('app.view.main.MainController', {
         }
     },
     
- // 隐藏顶部和底部的按钮事件
+    // 隐藏顶部和底部的按钮事件
     hiddenTopBottom : function() {
         // 如果要操纵控件，最好的办法是根据相对路径来找到该控件，用down或up最好，尽量少用getCmp()函数。
         this.getView().down('maintop').hide();
@@ -59,5 +59,19 @@ Ext.define('app.view.main.MainController', {
         if (this.showButton && !this.showButton.hidden) {
             this.showButton.setX(document.body.clientWidth - 32);
         }
-    }
+    },
+    
+    //显示左边菜单区域,隐藏菜单条和顶部按钮菜单
+    showLeftMenuRegion: function(button){
+    	this.getView().getViewModel().set('menuType.value', 'tree');
+    },
+    
+    showButtonMenu: function(button){
+    	this.getView().getViewModel().set('menuType.value', 'button');
+    },
+    
+    // 显示菜单条，隐藏左边菜单区域和顶部的按钮菜单。
+	showMainMenuToolbar : function(button) {
+		this.getView().getViewModel().set('menuType.value', 'toolbar');
+	}
 });

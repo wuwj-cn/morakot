@@ -12,9 +12,8 @@ Ext.define('app.view.main.Main', {
     uses: [
            'app.view.main.region.Top',
            'app.view.main.region.Bottom',
-           'app.view.main.region.MainMenuToolbar',
-           'app.view.main.region.MainMenuTree',
-           'app.view.main.region.AccordionMainMenu'
+           'app.view.main.region.Left',
+           'app.view.main.menu.MainMenuToolbar'
     ],
     
     controller: 'main',
@@ -36,7 +35,11 @@ Ext.define('app.view.main.Main', {
     	region: 'north'
     }, {
     	xtype: 'mainmenutoolbar',
-        region: 'north' // 把他放在maintop的下面
+        region: 'north', // 把他放在maintop的下面
+        hidden : true,
+		bind : {
+			hidden : '{!isToolbarMenu}'
+		}
     },{
     	region: 'center',
         xtype: 'tabpanel',
@@ -45,15 +48,16 @@ Ext.define('app.view.main.Main', {
             html: '<h2>Content appropriate for the current navigation.</h2>'
         }]
     }, {  
-        xtype : 'mainmenutree',  
+        xtype : 'mainmenuregion',  
         region : 'west', // 左边面板  
-        width : 250,
-        split : true
-    }, {  
-        xtype : 'mainmenuaccordion',  
-        region : 'west', // 左边面板  
-        width : 250,
-        split : true
+        width : 220,
+        split : true,
+        title: '导航菜单',
+        collapsible: true,
+        hidden : true,
+		bind : {
+			hidden : '{!isTreeMenu}'
+		}
     }, {
     	xtype: 'mainbottom',
         region: 'south' // 把他放在最底下
