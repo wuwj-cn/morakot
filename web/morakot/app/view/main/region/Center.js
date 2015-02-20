@@ -34,8 +34,7 @@ Ext.define('app.view.main.region.Center', {
 						if (item.checked)
 							Jfok.system.addModuleToAutoOpen(item.ownerCt.tabPanel.moduleName);
 						else
-							Jfok.system
-									.deleteModuleToAutoOpen(item.ownerCt.tabPanel.moduleName);
+							Jfok.system.deleteModuleToAutoOpen(item.ownerCt.tabPanel.moduleName);
 					}
 				}, '-', {
 					xtype : 'fieldcontainer',
@@ -67,8 +66,7 @@ Ext.define('app.view.main.region.Center', {
 				}
 				// 如果是有parentFilter的模块，那么自动打开的菜单条隐掉 ，上面的'-'也隐掉
 				menu.down('#autoopen').setVisible(!tabPanel.parentModuleName);
-				menu.down('#autoopen').previousSibling()
-						.setVisible(!tabPanel.parentModuleName);
+				menu.down('#autoopen').previousSibling().setVisible(!tabPanel.parentModuleName);
 
 				menu.down('#autoopen').setChecked(false);// Jfok.system
 				// .isModuleAutoOpen(tabPanel.moduleName));

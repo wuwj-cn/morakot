@@ -13,6 +13,8 @@ Ext.define('app.view.main.MainController', {
     ],
 
     alias: 'controller.main',
+    
+    uses : ['app.view.module.Module'],
 
     onClickButton: function () {
         Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
@@ -73,5 +75,16 @@ Ext.define('app.view.main.MainController', {
     // 显示菜单条，隐藏左边菜单区域和顶部的按钮菜单。
 	showMainMenuToolbar : function(button) {
 		this.getView().getViewModel().set('menuType.value', 'toolbar');
+	},
+	
+	// 选择了主菜单上的菜单后执行
+	onMainMenuClick : function(menuitem) {
+	    var maincenter = this.getView().down('maincenter');
+	            
+	    maincenter.setActiveTab(maincenter.add({
+	        xtype : 'modulepanel',
+	        closable : true,
+	        reorderable : true
+	    }));
 	}
 });
