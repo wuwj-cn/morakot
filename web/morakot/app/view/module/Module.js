@@ -6,7 +6,8 @@ Ext.define('app.view.module.Module', {
 
     alias: 'widget.modulepanel',
 
-    requires: ['app.view.module.ModuleController', 'app.view.module.ModuleModel'],
+    requires: ['app.view.module.ModuleController', 'app.view.module.ModuleModel',
+               'app.view.module.factory.ModelFactory'],
 
     uses: ['app.view.module.region.Navigate', 'app.view.module.region.Grid',
             'app.view.module.region.Detail'],
@@ -24,6 +25,20 @@ Ext.define('app.view.module.Module', {
 
     initComponent: function () {
         this.glyph = this.getViewModel().get('tf_glyph'); // 由于上面的glyph的bind无效，因此需要在这里加入glyph的设置
+        this.model = app.view.module.factory.ModelFactory.getModelByModule(this
+                .getViewModel());
+
+        console.log(this.model);
+
+        this.store = Ext.create('Ext.data.Store', {
+            model: this.model,
+            autoLoad: true,
+            proxy: {
+                type: 'localstorage',
+                id: 'module' + '__' + this.getViewModel().get('tf_moduleName')
+            }
+        });
+        
         this.items = [{
             xtype: 'navigate', // 导航区域
             region: 'west',
@@ -32,8 +47,8 @@ Ext.define('app.view.module.Module', {
             split: true
         }, {
             xtype: 'modulegrid', // 模块的grid显示区域
-            region: 'center'
-
+            region: 'center',
+            store: this.store
         }, {
             xtype: 'recorddetail', // 记录明细
             region: 'east',
