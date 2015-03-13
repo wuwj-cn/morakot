@@ -20,10 +20,9 @@ Ext.onReady(function () {
                 if (val) {
                     if (Ext.monetaryUnit && Ext.monetaryUnit != 1)
                         val = val / Ext.monetaryUnit;
-                    // 正数用蓝色显示，负数用红色显示
-                    return '<span style="color:' + (val > 0 ? 'blue' : 'red')
-                            + ';float:right;">' + Ext.util.Format.number(val, '0,000.00')
-                            + Ext.monetaryText + '</span>';
+                    // 正数用蓝色显示，负数用红色显示,必须css和返回的值分开来设置，否则不能autoSize()
+                    metaData.style = 'color:' + (val > 0 ? 'blue' : 'red') + ';float:right;';
+                    return Ext.util.Format.number(val, '0,000.00') + Ext.monetaryText;
                 } else
                     return ''; // 如果为0,则不显示
             },

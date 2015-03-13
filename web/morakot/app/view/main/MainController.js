@@ -15,6 +15,14 @@ Ext.define('app.view.main.MainController', {
     alias: 'controller.main',
     
     uses : ['app.view.module.Module'],
+    
+    init: function(){
+    	var vm = this.getView().getViewModel();
+        // 绑定金额单位修改过后需要去执行的程序
+        vm.bind('{monetary.value}', function(value) {
+            this.onMonetaryChange(value);
+        }, this);
+    },
 
     onClickButton: function () {
         Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
@@ -86,5 +94,25 @@ Ext.define('app.view.main.MainController', {
 	        closable : true,
 	        reorderable : true
 	    }));
-	}
+	},
+	
+    // 金额单位修改过后执行
+    onMonetaryChange : function(value) {
+        console.log('金额单位变更:' + value);
+        var m = app.view.main.menu.Monetary.getMonetary(value);
+        Ext.monetaryText = m.monetaryText; // 设置当前的全局的金额单位
+        Ext.monetaryUnit = m.monetaryUnit;
+        Ext.each(this.getView().query('modulegrid'), function(grid) {
+            if (grid.rendered) {
+                grid.getView().refresh();
+                Ext.Array.forEach(grid.columnManager.getColumns(), function(column) {
+                    // 如果可以改变大小，并且是金额字段，则在改变了金额单位以后，自动调整一下列宽
+                    if (!column.resizeDisabled && column.fieldDefine
+                            && column.fieldDefine.tf_isMoney) {
+                        column.autoSize();
+                    }
+                })
+            }
+        });
+    }
 });

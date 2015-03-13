@@ -8,9 +8,11 @@ Ext.define('app.view.module.ModuleController', {
     requires: ['Ext.MessageBox', 'Ext.window.Toast'],
 
     alias: 'controller.module',
+    
+    uses: ['app.view.main.menu.Monetary'],
 
     init: function () {
-        console.log('modulecontroller.init')
+        console.log('modulecontroller.init');
     },
     
     addRecord: function () {

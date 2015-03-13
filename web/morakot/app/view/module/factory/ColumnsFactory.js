@@ -82,8 +82,8 @@ Ext.define('app.view.module.factory.ColumnsFactory', {
 										xtype : 'datecolumn',
 										align : 'center',
 										width : 100,
-										renderer : Ext.util.Format.dateRenderer,
-										// formatter : 'dateRenderer', //
+										//renderer : Ext.util.Format.dateRenderer,
+										formatter : 'dateRenderer', //
 										// 定义在Ext.util.Format中的渲染函数可以用这种方法调用
 										editor : { // 如果需要行内修改，需要加入此属性
 											xtype : 'datefield',
@@ -98,8 +98,8 @@ Ext.define('app.view.module.factory.ColumnsFactory', {
 								xtype : 'datecolumn',
 								align : 'center',
 								width : 130,
-								renderer : Ext.util.Format.dateRenderer
-									// formatter : 'dateRenderer'
+								//renderer : Ext.util.Format.dateRenderer
+								formatter : 'dateRenderer'
 								});
 							break;
 
@@ -118,7 +118,7 @@ Ext.define('app.view.module.factory.ColumnsFactory', {
 										xtype : 'numbercolumn',
 										format : '#',
 										renderer : Ext.util.Format.intRenderer,
-										// formatter : 'intRenderer',
+										//formatter : 'intRenderer',
 										editor : {
 											xtype : 'numberfield'
 										}
@@ -147,8 +147,8 @@ Ext.define('app.view.module.factory.ColumnsFactory', {
 								align : 'right',
 								xtype : 'numbercolumn',
 								width : 110,
-								renderer : Ext.util.Format.floatRenderer
-									// formatter : 'floatRenderer' // 这种方法不可以
+								//renderer : Ext.util.Format.floatRenderer
+								formatter : 'floatRenderer' // 这种方法不可以
 								});
 							break;
 
@@ -156,7 +156,8 @@ Ext.define('app.view.module.factory.ColumnsFactory', {
 							Ext.apply(field, {
 								align : 'center',
 								minWidth : 80,
-								renderer : Ext.util.Format.percentRenderer,
+								//renderer : Ext.util.Format.percentRenderer,
+								formatter: 'percentRenderer',
 								// xtype : 'widgetcolumn', // 这里注释掉的是extjs5自带的百分比类型的显示方法
 								// widget : {
 								// xtype : 'progressbarwidget',
@@ -176,7 +177,8 @@ Ext.define('app.view.module.factory.ColumnsFactory', {
 							if (module.get('tf_nameFields') == fd.tf_fieldName)
 								Ext.apply(field, {
 											text : '<strong>' + fd.tf_title + '</strong>',
-											renderer : Ext.util.Format.nameFieldRenderer
+											//renderer : Ext.util.Format.nameFieldRenderer
+											formatter: 'nameFieldRenderer'
 										});
 							else
 								Ext.apply(field, {});

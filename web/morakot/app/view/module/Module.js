@@ -25,9 +25,7 @@ Ext.define('app.view.module.Module', {
 
     initComponent: function () {
         this.glyph = this.getViewModel().get('tf_glyph'); // 由于上面的glyph的bind无效，因此需要在这里加入glyph的设置
-        this.model = app.view.module.factory.ModelFactory.getModelByModule(this
-                .getViewModel());
-
+        this.model = app.view.module.factory.ModelFactory.getModelByModule(this.getViewModel());
         console.log(this.model);
 
         this.store = Ext.create('Ext.data.Store', {
