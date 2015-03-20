@@ -10,7 +10,7 @@ Ext.define('app.view.module.Module', {
                'app.view.module.factory.ModelFactory'],
 
     uses: ['app.view.module.region.Navigate', 'app.view.module.region.Grid',
-            'app.view.module.region.Detail'],
+            'app.view.module.region.Detail', 'app.view.module.window.BaseWindow'],
 
     controller: 'module',
     // MVVM架构的控制器的名称，main控制器会自动加载，这个控制器不会自动加载，需要在requires中指定，不知道是为什么

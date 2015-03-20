@@ -159,6 +159,83 @@ Ext.define('app.view.module.ModuleModel', {
                 }]
             }]
 
+        }],
+     // 模块的form方案，可以定义多个方案
+        tf_formSchemes: [{
+            tf_schemeOrder: 10,
+            tf_schemeName: 'form方案1', // 第一个form方案
+            tf_windowWidth: 600, // form window 的宽度
+            tf_windowHeight: -1, // 高度-1 即为自动适应高度
+            // 表头分组
+            tf_schemeGroups: [{
+                tf_formGroupId: 1, // id号
+                tf_formGroupOrder: 10, // 表头分组序号
+                tf_formGroupName: '工程项目基本信息',
+                tf_numCols: 1, // 分栏数
+                tf_displayMode: 'tab',
+                // 每一个表头分组下面的字段
+                tf_groupFields: [{
+                    tf_formFieldOrder: 5,
+                    tf_fieldId: 10100010,
+                    tf_colspan: 1, // 此字段占用的栏数
+                    tf_width: -1,// 宽度，设置-1为 100%
+                    tf_isEndRow: true
+                    // 结束本行，下个字段从新的一行开始排列
+                }, {
+                    tf_formFieldOrder: 10,
+                    tf_fieldId: 10100020, // 工程项目名称字段
+                    tf_colspan: 1, // 此字段占用的栏数
+                    tf_width: -1,// 宽度，设置-1为 100%
+                    tf_isEndRow: true
+                    // 结束本行，下个字段从新的一行开始排列
+                }, {
+                    tf_formFieldOrder: 20,
+                    tf_fieldId: 10100030, // 工程项目编码字段
+                    tf_colspan: 1, // 此字段占用的栏数
+                    tf_width: -1,// 宽度，设置-1为 100%
+                    tf_isEndRow: true
+                    // 结束本行，下个字段从新的一行开始排列
+                }]
+            }, {
+                tf_formGroupOrder: 20, // 表头分组序号
+                tf_formGroupName: '工程项目附加信息',
+                tf_numCols: 2, // 分栏数
+                tf_collapsible: true, // 此fieldSet可折叠
+                tf_collapsed: false, // 默认不折叠
+                // 每一个表头分组下面的字段
+                tf_groupFields: [{
+                    tf_formFieldOrder: 10,
+                    tf_fieldId: 10100040
+                    // 建筑面积
+                }, {
+                    tf_formFieldOrder: 20,
+                    tf_fieldId: 10100050
+                    // 投资总额
+                }, {
+                    tf_formFieldOrder: 30,
+                    tf_fieldId: 10100060,
+                    tf_isEndRow: true
+                    // 结束本行，下个字段从新的一行开始排列
+                    // 容积率
+                }, {
+                    tf_formFieldOrder: 40,
+                    tf_fieldId: 10100070
+                    // 计划开工时间
+                }, {
+                    tf_formFieldOrder: 50,
+                    tf_fieldId: 10100080
+                    // 计划竣工时间
+                }, {
+                    tf_formFieldOrder: 60,
+                    tf_fieldId: 10100090
+                    // 是否通过验收
+                }, {
+                    tf_formFieldOrder: 70,
+                    tf_fieldId: 10100100
+                    // 工程方量
+                }]
+            }]
+
         }]
 
     },

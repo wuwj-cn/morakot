@@ -32,6 +32,14 @@ Ext.define('app.view.module.ModuleController', {
         grid.getStore().add(model);
         console.log(model);
         grid.getStore().sync();
+    },
+    editRecord : function(button) {
+    	var window = Ext.widget('basewindow', {
+            viewModel : this.getView().getViewModel()
+        });
+        window.down('baseform').setData(this.getView().down('modulegrid')
+                .getSelectionModel().getSelection()[0]);
+        window.show();
     }
 
 })
