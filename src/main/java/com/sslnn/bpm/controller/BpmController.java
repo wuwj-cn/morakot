@@ -20,7 +20,8 @@ public class BpmController {
 
 	@RequestMapping("bpm-list")
 	public String list(Model model) {
-		List<ProcessDefinition> list = repositoryService.createProcessDefinitionQuery().list();
+		List<ProcessDefinition> list = repositoryService
+				.createProcessDefinitionQuery().list();
 		for (ProcessDefinition definition : list) {
 			System.out.println(definition.getName());
 		}
