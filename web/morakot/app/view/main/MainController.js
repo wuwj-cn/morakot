@@ -98,7 +98,6 @@ Ext.define('app.view.main.MainController', {
 	
     // 金额单位修改过后执行
     onMonetaryChange : function(value) {
-        console.log('金额单位变更:' + value);
         var m = app.view.main.menu.Monetary.getMonetary(value);
         Ext.monetaryText = m.monetaryText; // 设置当前的全局的金额单位
         Ext.monetaryUnit = m.monetaryUnit;

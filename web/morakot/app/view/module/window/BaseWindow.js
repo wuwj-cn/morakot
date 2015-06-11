@@ -26,7 +26,6 @@ Ext.define('app.view.module.window.BaseWindow', {
         var me = this;
 
         this.formScheme = this.getViewModel().get('tf_formSchemes')[0]; // 取得第一个form方案
-        console.log(this.formScheme);
         this.title = this.getViewModel().get('tf_title');
         this.glyph = this.getViewModel().get('tf_glyph');
 

@@ -39,7 +39,6 @@ Ext.define('app.view.module.factory.ColumnsFactory', {
 							columns.push(group);
 						}
 					}
-					console.log(columns)
 					return columns;
 				},
 
@@ -59,7 +58,6 @@ Ext.define('app.view.module.factory.ColumnsFactory', {
 				 */
 				getColumn : function(gf, fd, module) {
 
-					// console.log(fd);
 					var ft = fd.tf_title.replace(new RegExp('--', 'gm'), '<br/>');
 					if (fd.tf_unitText)
 						ft += '<br/>(' + fd.tf_unitText + ')';

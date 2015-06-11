@@ -10,7 +10,7 @@ Ext.define('app.view.module.form.BaseForm', {
 
     autoScroll: true,
 
-    buttonAlign: 'right',
+    buttonAlign: 'center',
     initComponent: function () {
         var me = this;
         this.buttons = [];
@@ -20,6 +20,7 @@ Ext.define('app.view.module.form.BaseForm', {
             glyph: 0xf0c7,
             handler: function (button) {
                 button.up('form').getForm().updateRecord();
+                button.up('window').hide();
             }
         }, {
             text: '关闭',

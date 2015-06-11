@@ -6,8 +6,6 @@ Ext.define('app.view.module.factory.ModelFactory', {
 			statics : {
 				// 生成module的model,传入的数据是ModelModel中的data
 				getModelByModule : function(moduleModel) {
-					//console.log('moduleModel');
-					//console.log(moduleModel);
 					var module = moduleModel.data;
 					return Ext.define('app.model.' + module.tf_moduleName, {
 								extend : 'Ext.data.Model',
