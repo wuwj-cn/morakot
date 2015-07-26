@@ -1,0 +1,46 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|userClassName": "gridDataStore",
+        "model": "gridData",
+        "storeId": "gridDataStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "e822c0bb-bbe4-4022-8ab0-e2c9f45a05a0",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "data/cars.json"
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "91fa6139-e9c7-4a55-8277-f92aeedcdb46",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "7ef31baf-bb02-4c3f-a877-7c07726c2a1c"
+                }
+            ]
+        }
+    ]
+}
