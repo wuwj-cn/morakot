@@ -1,0 +1,25 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "gridData",
+            "CarChart"
+        ],
+        "name": "oa",
+        "stores": [
+            "MenuStore",
+            "gridDataStore",
+            "CarChartStore"
+        ],
+        "views": [
+            "MyViewport"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application"
+}
