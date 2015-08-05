@@ -1,7 +1,0 @@
-# ext-theme-crisp-3dd341cb-4148-4c9e-9f4f-78950e3a88b7/sass
-
-This folder contains SASS files of various kinds, organized in sub-folders:
-
-    ext-theme-crisp-3dd341cb-4148-4c9e-9f4f-78950e3a88b7/sass/etc
-    ext-theme-crisp-3dd341cb-4148-4c9e-9f4f-78950e3a88b7/sass/src
-    ext-theme-crisp-3dd341cb-4148-4c9e-9f4f-78950e3a88b7/sass/var

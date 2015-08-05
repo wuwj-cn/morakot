@@ -8,7 +8,7 @@
 	<packaging>war</packaging>
 
 
-	<inceptionYear>2014</inceptionYear>
+	<inceptionYear>2015</inceptionYear>
 
 	<licenses>
 		<license>
@@ -213,6 +213,14 @@
 			<groupId>org.freemarker</groupId>
 			<artifactId>freemarker</artifactId>
 			<version>${freemarker.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -690,6 +698,17 @@
 				<groupId>org.freemarker</groupId>
 				<artifactId>freemarker</artifactId>
 				<version>${freemarker.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-core</artifactId>
+				<version>${shiro.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid</artifactId>
+				<version>${druid.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -1266,6 +1285,8 @@
 		<jms.version>1.1.1</jms.version>
 		<jstl.version>1.2</jstl.version>
 		<freemarker.version>2.3.20</freemarker.version>
+		<shiro.version>1.2.2</shiro.version>
+		<druid.version>0.2.23</druid.version>
 
 		<maven-antrun-plugin.version>1.7</maven-antrun-plugin.version>
 		<maven-clean-plugin.version>2.5</maven-clean-plugin.version>

@@ -41,7 +41,7 @@ Ext.define('oa.view.MyViewport', {
         {
             xtype: 'panel',
             region: 'north',
-            height: '10%',
+            height: '5%',
             itemId: 'headerPanel'
         },
         {
